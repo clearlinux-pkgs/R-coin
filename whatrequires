@@ -1,16 +1,4 @@
 # This file contains recursive sources that require this package
-R-AER
-R-betareg
-R-broom
-R-caret
-R-inum
-R-ipred
 R-libcoin
-R-mi
-R-modelr
 R-party
-R-partykit
-R-recipes
-R-sem
-R-systemfit
-R-tidyverse
+R-vcdExtra
