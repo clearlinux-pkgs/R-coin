@@ -1,5 +1,7 @@
-1.2.2
+1.3.0
 R-e1071
+R-libcoin
+R-matrixStats
 R-modeltools
 R-multcomp
 R-mvtnorm
