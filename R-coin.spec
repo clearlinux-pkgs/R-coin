@@ -4,22 +4,23 @@
 #
 Name     : R-coin
 Version  : 1.3.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/coin_1.3-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/coin_1.3-0.tar.gz
 Summary  : Conditional Inference Procedures in a Permutation Test Framework
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-coin-lib = %{version}-%{release}
-Requires: R-libcoin
-Requires: R-matrixStats
-Requires: R-multcomp
-Requires: R-mvtnorm
 BuildRequires : R-TH.data
+BuildRequires : R-e1071
 BuildRequires : R-libcoin
 BuildRequires : R-matrixStats
+BuildRequires : R-modeltools
 BuildRequires : R-multcomp
 BuildRequires : R-mvtnorm
+BuildRequires : R-vcd
+BuildRequires : R-xtable
+BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
 %description
@@ -42,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552078416
+export SOURCE_DATE_EPOCH=1552729316
 
 %install
-export SOURCE_DATE_EPOCH=1552078416
+export SOURCE_DATE_EPOCH=1552729316
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,8 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library coin|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  coin || :
 
 
 %files
@@ -127,7 +127,41 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/coin/help/paths.rds
 /usr/lib64/R/library/coin/html/00Index.html
 /usr/lib64/R/library/coin/html/R.css
-/usr/lib64/R/library/coin/libs/symbols.rds
+/usr/lib64/R/library/coin/tests/AIDS.rda
+/usr/lib64/R/library/coin/tests/Examples/coin-Ex.Rout.save
+/usr/lib64/R/library/coin/tests/FAILURE.rda
+/usr/lib64/R/library/coin/tests/LANCET.rda
+/usr/lib64/R/library/coin/tests/army.rda
+/usr/lib64/R/library/coin/tests/asthma.rda
+/usr/lib64/R/library/coin/tests/bloodp.rda
+/usr/lib64/R/library/coin/tests/bugfixes.R
+/usr/lib64/R/library/coin/tests/bugfixes.Rout.save
+/usr/lib64/R/library/coin/tests/comparisons.R
+/usr/lib64/R/library/coin/tests/comparisons.Rout.save
+/usr/lib64/R/library/coin/tests/employment.rda
+/usr/lib64/R/library/coin/tests/lungcancer.rda
+/usr/lib64/R/library/coin/tests/regtest_2sample.R
+/usr/lib64/R/library/coin/tests/regtest_2sample.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_Ksample.R
+/usr/lib64/R/library/coin/tests/regtest_Ksample.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_MTP.R
+/usr/lib64/R/library/coin/tests/regtest_MTP.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_contingency.R
+/usr/lib64/R/library/coin/tests/regtest_contingency.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_correlation.R
+/usr/lib64/R/library/coin/tests/regtest_correlation.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_distribution.R
+/usr/lib64/R/library/coin/tests/regtest_distribution.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_helpers.R
+/usr/lib64/R/library/coin/tests/regtest_helpers.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_midpvalue.R
+/usr/lib64/R/library/coin/tests/regtest_midpvalue.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_names.R
+/usr/lib64/R/library/coin/tests/regtest_names.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_size.R
+/usr/lib64/R/library/coin/tests/regtest_size.Rout.save
+/usr/lib64/R/library/coin/tests/regtest_trafo.R
+/usr/lib64/R/library/coin/tests/regtest_trafo.Rout.save
 
 %files lib
 %defattr(-,root,root,-)
