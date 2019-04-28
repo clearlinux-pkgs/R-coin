@@ -4,15 +4,13 @@
 #
 Name     : R-coin
 Version  : 1.3.0
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/coin_1.3-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/coin_1.3-0.tar.gz
 Summary  : Conditional Inference Procedures in a Permutation Test Framework
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-coin-lib = %{version}-%{release}
-Requires: R-colorspace
-Requires: R-sandwich
 BuildRequires : R-TH.data
 BuildRequires : R-colorspace
 BuildRequires : R-e1071
@@ -47,10 +45,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556468532
+export SOURCE_DATE_EPOCH=1556481010
 
 %install
-export SOURCE_DATE_EPOCH=1556468532
+export SOURCE_DATE_EPOCH=1556481010
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
