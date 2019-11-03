@@ -4,7 +4,7 @@
 #
 Name     : R-coin
 Version  : 1.3.1
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/coin_1.3-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/coin_1.3-1.tar.gz
 Summary  : Conditional Inference Procedures in a Permutation Test Framework
