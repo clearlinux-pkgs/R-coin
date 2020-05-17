@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
 R-party
+R-partykit
 R-varImp
 R-vcdExtra
